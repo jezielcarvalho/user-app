@@ -5,6 +5,7 @@ import "react-native-gesture-handler";
 import Icon from "react-native-vector-icons/MaterialIcons";
 import Register from "./src/app/screens/Register";
 import Users from "./src/app/screens/Users";
+import theme from "./src/app/theme";
 
 const Tab = createBottomTabNavigator();
 
@@ -13,7 +14,7 @@ export default function App() {
     <NavigationContainer>
       <Tab.Navigator
         tabBarOptions={{
-          activeTintColor: "#e91e63",
+          activeTintColor: theme.colors.primary,
           showLabel: false,
         }}
       >
@@ -26,7 +27,9 @@ export default function App() {
               <Icon
                 name="assignment"
                 size={30}
-                color={focused ? "#e91e63" : "#ddd"}
+                color={
+                  focused ? theme.colors.primary : theme.colors.neutralGray
+                }
               />
             ),
           }}
@@ -40,7 +43,9 @@ export default function App() {
               <Icon
                 name="search"
                 size={30}
-                color={focused ? "#e91e63" : "#ddd"}
+                color={
+                  focused ? theme.colors.primary : theme.colors.neutralGray
+                }
               />
             ),
           }}
